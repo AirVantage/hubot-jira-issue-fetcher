@@ -1,6 +1,6 @@
 {
   "name": "hubot-jira-issue-fetcher",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Bot fetching JIRA issue details",
   "main": "index.js",
   "author": "sebz",
