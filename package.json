@@ -1,0 +1,23 @@
+{
+  "name": "hubot-jira-issue-fetcher",
+  "version": "1.0.0",
+  "description": "Bot fetching JIRA issue details",
+  "main": "index.js",
+  "author": "sebz",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "build": "babel src -d .",
+    "test": "ava"
+  },
+  "dependencies": {
+    "got": "^6.6.3",
+    "lodash": "^4.17.2"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-cli": "^6.18.0",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-latest": "^6.16.0"
+  }
+}
