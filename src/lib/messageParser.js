@@ -12,6 +12,7 @@ export default (configuration) => {
 
     function extractIssueKeys(message) {
         const messageChunks = message ? message.split(" ") : [];
+
         return _.chain(messageChunks)
             .map(chunk => {
                 return _.map(config.projectsKeys, projectKey => {
@@ -22,7 +23,7 @@ export default (configuration) => {
 
                     // Issue link => extract key
                     if (chunk.indexOf(projectKey) !== -1) {
-                        return chunk.split(`https://${config.host}/browse/`)[1];
+                        return chunk.split(`https://${config.jiraHost}/browse/`)[1];
                     }
                 });
             })

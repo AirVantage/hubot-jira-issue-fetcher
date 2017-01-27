@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "got": "^6.6.3",
+    "jira-client": "^4.2.0",
     "lodash": "^4.17.2"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "babel-cli": "^6.18.0",
     "babel-polyfill": "^6.20.0",
     "babel-preset-latest": "^6.16.0",
+    "eslint": "^3.14.0",
     "grunt": "^1.0.1",
     "grunt-release": "^0.14.0"
   }

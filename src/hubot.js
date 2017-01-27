@@ -1,7 +1,7 @@
 import messageParser from './lib/messageParser';
 
 const configuration = {
-    host: process.env.JIRA_HOST,
+    jiraHost: process.env.JIRA_HOST,
     projectsKeys: process.env.JIRA_PROJECTS_KEYS.split(','),
     jiraUser: process.env.JIRA_USER,
     jiraPwd: process.env.JIRA_PWD,
@@ -13,10 +13,11 @@ function isDirectMessage(message, robot) {
 
 export default (robot) => {
     const parser = messageParser(configuration);
-    robot.listen(message => true, res => {
+    robot.listen(() => true, res => {
         const room = res.message.user.room,
             message = res.message.text,
             needDetailedInfo = isDirectMessage(message, robot);
+
         parser.parse(message, needDetailedInfo)
             .then(attachments => {
                 if (attachments) {
@@ -33,4 +34,4 @@ export default (robot) => {
                 });
             });
     });
-}
+};

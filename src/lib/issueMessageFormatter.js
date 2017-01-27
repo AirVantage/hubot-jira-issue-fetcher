@@ -37,7 +37,7 @@ export default (options) => {
             case 'Incomplete':
                 return 'warning';
             case 'Closed':
-                return 'good'
+                return 'good';
             case 'Error':
                 return '#E53B30';
             default:
