@@ -10,7 +10,7 @@ export default (configuration) => {
         config: config
     });
     let detailedInfo;
-
+ 
     function extractIssueKeys(message) {
         const messageChunks = message ? message.split(" ") : [];
 
@@ -18,7 +18,7 @@ export default (configuration) => {
             .map(chunk => {
                 return _.map(config.projectsKeys, projectKey => {
                     // Issue key detected
-                    if (chunk.indexOf(projectKey) === 0) {
+                    if (chunk.indexOf(`${projectKey}-`) === 0) {
                         return chunk
                     }
 
