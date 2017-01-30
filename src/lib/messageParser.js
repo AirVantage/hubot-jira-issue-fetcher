@@ -9,11 +9,12 @@ export default (configuration) => {
     const messageFormatter = issueMessageFormatter({
         config: config
     });
+    let detailedInfo;
 
     function extractIssueKeys(message) {
         const messageChunks = message ? message.split(" ") : [];
 
-        return _.chain(messageChunks)
+        const keys = _.chain(messageChunks)
             .map(chunk => {
                 return _.map(config.projectsKeys, projectKey => {
                     // Issue key detected
@@ -30,6 +31,10 @@ export default (configuration) => {
             .flatten()
             .compact()
             .value();
+
+            detailedInfo = detailedInfo || (keys && messageChunks.length === keys.length);
+
+            return keys;
     }
 
     function isUnknownKeyError(errorMessage) {
@@ -40,13 +45,14 @@ export default (configuration) => {
     return {
         extractIssueKeys: message => extractIssueKeys(message),
         parse: (message, needDetailedInfo) => {
+            detailedInfo = needDetailedInfo;
             const issueKeys = extractIssueKeys(message);
 
             if (issueKeys.length) {
                 return jiraApi.getIssuesByKeys(issueKeys)
                     .then(issues => {
                         let messages;
-                        if (needDetailedInfo) {
+                        if (detailedInfo) {
                             messages = messageFormatter.buildDetailedMessages(issues);
                         } else {
                             messages = messageFormatter.buildMessages(issues);

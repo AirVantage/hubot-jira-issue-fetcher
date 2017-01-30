@@ -10,7 +10,7 @@ export default (options) => {
             author_name: issue.fields.assignee ? issue.fields.assignee.displayName : 'Unassigned',
             author_icon: issue.fields.assignee ? issue.fields.assignee.avatarUrls['16x16'] : null,
             title: `${issue.key}: ${issue.fields.summary}`,
-            title_link: `https://${config.host}/browse/${issue.key}`,
+            title_link: `https://${config.jiraHost}/browse/${issue.key}`,
             text: issue.fields.description,
             fields: [{
                 title: 'Status',
@@ -24,7 +24,7 @@ export default (options) => {
         return {
             fallback: issue.fields.summary,
             color: getColorForStatus(issue.fields.status.name),
-            text: `<https://${config.host}/browse/${issue.key}|${issue.key}> \`${issue.fields.status.name}\` ${issue.fields.summary}`,
+            text: `<https://${config.jiraHost}/browse/${issue.key}|${issue.key}> \`${issue.fields.status.name}\` ${issue.fields.summary}`,
             mrkdwn_in: ['text']
         };
     }
