@@ -19,7 +19,7 @@ export default (configuration) => {
                 return _.map(config.projectsKeys, projectKey => {
                     // Issue key detected
                     if (chunk.indexOf(`${projectKey}-`) === 0) {
-                        return chunk
+                        return chunk.replace(/,$/, "");
                     }
 
                     // Issue link => extract key
