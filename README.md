@@ -1,6 +1,6 @@
 hubot-jira-issue-fetcher
 ========================
-> Hubot that detects JIRA issue keys in messages, fetch corresponding details and display them
+> Hubot script that detects JIRA issue keys in messages, fetch corresponding details and display them
 
 ## Usage
 Requires the following environment variables to be set:
