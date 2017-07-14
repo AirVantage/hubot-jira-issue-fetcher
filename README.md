@@ -2,6 +2,9 @@ hubot-jira-issue-fetcher
 ========================
 > Hubot script that detects JIRA issue keys in messages, fetch corresponding details and display them
 
+
+[![Build Status](https://travis-ci.org/AirVantage/hubot-jira-issue-fetcher.svg?branch=master)](https://travis-ci.org/AirVantage/hubot-jira-issue-fetcher)
+
 ## Usage
 Requires the following environment variables to be set:
 
