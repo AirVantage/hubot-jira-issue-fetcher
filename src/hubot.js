@@ -20,7 +20,8 @@ export default (robot) => {
         let message = {
             room: res.message.user.room,
             text: res.message.text,
-            needDetailedInfo: isDirectMessage(res.message.text, robot)
+            needDetailedInfo: isDirectMessage(res.message.text, robot),
+            thread_ts: res.message.thread_ts
         };
 
         getIssues(parser.extractIssueKeys(message))
@@ -70,8 +71,7 @@ function sendResponseMessage(message) {
         postMessage(message.room, null, {
             as_user: true,
             attachments: message.response,
-            // thread_ts: '1485810245.000003'
-            // thread_ts: threadTs
+            thread_ts: message.thread_ts
         });
     }
 }
