@@ -9,7 +9,7 @@
     "start": "node index.js",
     "build": "babel src -d .",
     "prepublish": "npm run build",
-    "test": "ava"
+    "test": "npm run build && ava"
   },
   "dependencies": {
     "got": "^6.6.3",

@@ -1,12 +1,9 @@
 import test from 'ava';
 import messageParser from '../lib/messageParser';
 
-
 const configuration = {
     jiraHost: 'issues.sierrawireless.com',
-    projectsKeys: 'PLTFRS,PLTBUGS'.split(','),
-    jiraUser: process.env.JIRA_USER,
-    jiraPwd: process.env.JIRA_PWD
+    projectsKeys: 'PLTFRS,PLTBUGS'.split(',')
 };
 
 const parser = messageParser(configuration);
