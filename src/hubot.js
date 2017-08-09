@@ -11,7 +11,7 @@ const configuration = {
     jiraApi = jira(configuration),
     parser = messageParser(configuration),
     formatter = messageFormatter(configuration),
-    JIRA_KEY_MATCHER = /[A-Z]*-\d+/i;
+    JIRA_KEY_MATCHER = /[A-Z0-9]*-\d+/i;
 let bot;
 
 export default (robot) => {

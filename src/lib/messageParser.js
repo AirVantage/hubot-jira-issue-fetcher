@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const ALL_JIRA_KEY_MATCHER = /[A-Z]*-\d+/g;
+const ALL_JIRA_KEY_MATCHER = /[A-Z0-9]*-\d+/g;
 
 export default (configuration) => {
     return {
