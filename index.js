@@ -17,6 +17,10 @@ let bot;
 module.exports = robot => {
 	bot = robot;
 	bot.hear(JIRA_KEY_MATCHER, res => {
+		if (res.message.user.slack.is_bot) {
+			return;
+		}
+
 		let message = {
 			room: res.message.user.room,
 			text: res.message.text,
