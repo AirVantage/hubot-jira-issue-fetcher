@@ -7,9 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "build": "babel src -d .",
-    "prepublish": "npm run build",
-    "test": "npm run build && ava"
+    "test": "ava"
   },
   "dependencies": {
     "got": "^6.6.3",
@@ -17,10 +15,7 @@
     "lodash": "^4.17.2"
   },
   "devDependencies": {
-    "ava": "^0.17.0",
-    "babel-cli": "^6.18.0",
-    "babel-polyfill": "^6.20.0",
-    "babel-preset-latest": "^6.16.0",
+    "ava": "^1.4.1",
     "eslint": "^3.14.0",
     "grunt": "^1.0.1",
     "grunt-release": "^0.14.0"
