@@ -17,6 +17,8 @@ Requires the following environment variables to be set:
 
 ## Features
 
+It will ignore messages posted by other bots/apps
+
 ### Light display
 
 When invited in a channel, hubot detects JIRA issue keys, fetch corresponding details and display a minimal version of the details:
@@ -33,7 +35,3 @@ When talking directly to or mentioning hubot in message channel, will result in 
 -   Key + Summary (link)
 -   Description
 -   Status
-
-## Development
-
-See https://github.com/AirVantage/ccbot#development-setup
