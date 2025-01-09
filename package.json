@@ -10,7 +10,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "got": "^6.6.3",
+    "got": "^14.4.5",
     "jira-client": "^4.2.0",
     "lodash": "^4.17.2"
   },
