@@ -2,7 +2,7 @@ import test from 'ava';
 import messageParser from '../lib/messageParser';
 
 const configuration = {
-  jiraHost: 'issues.sierrawireless.com',
+  JIRA_HOST: 'jira.semtech.com',
   projectsKeys: 'PLTFRS,PLTBUGS,ALT1250'.split(','),
 };
 

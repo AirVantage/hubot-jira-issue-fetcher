@@ -4,12 +4,10 @@ const messageFormatter = require('./lib/messageFormatter');
 const slackUtils = require('./lib/slackUtils');
 
 const configuration = {
-  jiraAPIHost: process.env.JIRA_API_HOST,
-  jiraHost: process.env.JIRA_HOST,
-  projectsKeys: process.env.JIRA_PROJECTS_KEYS.split(','),
-  jiraUser: process.env.JIRA_USER,
-  jiraPwd: process.env.JIRA_PWD,
-},
+    JIRA_HOST: process.env.JIRA_HOST,
+    projectsKeys: process.env.JIRA_PROJECTS_KEYS.split(','),
+    JIRA_TOKEN: process.env.JIRA_TOKEN,
+  },
   jiraApi = jira(configuration),
   parser = messageParser(configuration),
   formatter = messageFormatter(configuration),
@@ -18,7 +16,7 @@ let bot;
 
 const DEBUG = (message) => {
   bot.logger.debug('JIRA-ISSUE-FETCHER: ' + message);
-}
+};
 
 module.exports = (robot) => {
   bot = robot;
